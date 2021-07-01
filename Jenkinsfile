@@ -1,6 +1,10 @@
 pipeline {
     agent any
      
+    environment {
+    VAULT_PASSWORD_FILE = credentials('VAULT_FILE')
+   }
+    
     stages {
       stage('checkout') {
            steps {
@@ -32,7 +36,7 @@ pipeline {
                  
              
                
-               sh "ansible-playbook -i inventory.ini playbook.yml  --vault-password-file vars/ssh/vault.yml'"
+                sh "ansible-playbook -i inventory.ini playbook.yml  --vault-password-file ${VAULT_PASSWORD_FILE}'"
 
 }
 }

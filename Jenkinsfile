@@ -32,7 +32,7 @@ pipeline {
                  
              
                
-               sh "ansible-playbook -i inventory.ini playbook.yml  --ask-vault-pass'"
+               sh "ansible-playbook -i inventory.ini playbook.yml  --vault-password-file vars/ssh/vault.yml'"
 
 }
 }

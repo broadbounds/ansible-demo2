@@ -36,7 +36,7 @@ pipeline {
                  
              
                
-                sh "ansible-playbook -i inventory.ini playbook.yml  --vault-password-file ${VAULT_PASSWORD_FILE}'"
+                sh "ansible-playbook -i inventory.ini playbook.yml  --vault-password-file '$VAULT_PASSWORD_FILE'"
 
 }
 }

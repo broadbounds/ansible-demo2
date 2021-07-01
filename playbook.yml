@@ -12,7 +12,7 @@
 
 
   tasks:
-  - include_vars: vars/vault.yml
+  - include_vars: vars/variables.yml
 
   - name: For each host, scan for its ssh public key
     shell: "ssh-keyscan {{ item }},`dig +short {{ item }}`"
